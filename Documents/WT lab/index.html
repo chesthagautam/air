@@ -1,0 +1,44 @@
+
+<html>
+<body bgcolor="purple"><br><br>
+<script type="text/javascript">
+
+function validate()
+{
+var flag=1;
+if(document.myform.name.value==""|| document.myform.phno.value==""||document.myform.id.value==""||document.myform.pwd.value=="")
+{
+flag=0;
+}
+var str=document.myform.phno.value;
+ var phoneno = /^\d{10}$/;
+if(!(str.match(phoneno)))
+{
+flag=0;
+}
+if(flag==1)
+
+{
+alert("Data Saved!");
+}
+else
+{
+alert("Invalid Input!");
+document.myform.focus();
+}
+}
+</script>
+
+<br>
+<form name="myform">
+<div align="center"><pre>
+COLLEGE NAME :<input type="text" name="name"><br>
+PHONE NUMBER:<input type="text"name="phno"><br>
+USERNAME :<input type="text"name="id"><br>
+PASSWORD :<input type="password"name="pwd"></pre><br><br>
+</div>
+
+<div align="center">
+<input type="button" value="ok" onClick="validate()">&nbsp;&nbsp;&nbsp;
+<input type="reset" value="reset">
+</form></body></html>
